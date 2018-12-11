@@ -32,7 +32,7 @@ This project will introduce how to build caffe:
 #### CMake
 
     1. modify CMakeLists as follow.
-    +add_definitions(-std=c++11)
+    +add_definitions(-std=c++11)    // latest version opencv need cpp11 support.
     
     $ cd caffe
     $ mkdir build
