@@ -31,6 +31,23 @@ This project will introduce how to build caffe:
 
 #### CMake
 
+    1. modify CMakeLists as follow.
+    +add_definitions(-std=c++11)
+    
     $ cd caffe
     $ mkdir build
     $ make all -j
+    
+#### Test classification
+
+    $ cd models/bvlc_reference_caffenet
+    $ ../../build/examples/cpp_classification/classification deploy.prototxt bvlc_reference_caffenet.caffemodel mean.binaryproto synset_words.txt cat.jpg 
+    
+    Result:
+    ---------- Prediction for cat.jpg ----------
+    0.3134 - "n02123045 tabby, tabby cat"
+    0.2380 - "n02123159 tiger cat"
+    0.1235 - "n02124075 Egyptian cat"
+    0.1003 - "n02119022 red fox, Vulpes vulpes"
+    0.0715 - "n02127052 lynx, catamount"
+
