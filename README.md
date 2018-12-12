@@ -51,3 +51,7 @@ This project will introduce how to build caffe:
     0.1003 - "n02119022 red fox, Vulpes vulpes"
     0.0715 - "n02127052 lynx, catamount"
 
+# QA
+1. ```ERROR```: F1212 09:13:27.964561 31483 syncedmem.hpp:22] Check failed: error == cudaSuccess (35 vs. 0)  CUDA driver version is insufficient for CUDA runtime version   <br>
+You need to check your cuda path. for example: /usr/local/cuad-9.0  <br>
+
