@@ -49,7 +49,12 @@ This project will introduce how to build caffe:
 #### Test classification
 
     $ cd models/bvlc_reference_caffenet
-    $ ../../build/examples/cpp_classification/classification deploy.prototxt bvlc_reference_caffenet.caffemodel mean.binaryproto synset_words.txt cat.jpg 
+    $ wget http://dl.caffe.berkeleyvision.org/bvlc_reference_caffenet.caffemodel
+    $ cp ../../examples/images/cat.jpg ./
+    $ cp ../../data/ilsvrc12/imagenet_mean.binaryproto ./
+    $ cp ../../data/ilsvrc12/synset_words.txt ./
+
+    $ ../../build/examples/cpp_classification/classification deploy.prototxt bvlc_reference_caffenet.caffemodel imagenet_mean.binaryproto synset_words.txt cat.jpg 
     
     Result:
     ---------- Prediction for cat.jpg ----------
