@@ -46,6 +46,9 @@ This project will introduce how to build caffe:
     $ mkdir build
     $ make all -j
     
+    If you like to pycaffe, please build pycaffe again(default python2[need to open support_python_layer=1 in file Makefile.config] had been verifed pass)
+    $ make pycaffe
+    
 #### Test classification
 
     $ cd models/bvlc_reference_caffenet
@@ -67,4 +70,18 @@ This project will introduce how to build caffe:
 # QA
 1. ```ERROR```: F1212 09:13:27.964561 31483 syncedmem.hpp:22] Check failed: error == cudaSuccess (35 vs. 0)  CUDA driver version is insufficient for CUDA runtime version   <br>
 You need to check your cuda path. for example: /usr/local/cuda-9.0  <br>
+
+2. Python3
+  By modify some option in Makefile.config, we can build python3 version caffe pass, but may be tip error as follow when using pycaffe.
+  
+    ... <br>
+    ... <br>
+    File "/home/xiping/.local/lib/python3.5/site-packages/matplotlib/axes/_axes.py", line 20, in <module> <br>
+        import matplotlib.dates as _  # <-registers a date unit converter <br>
+    File "/home/xiping/.local/lib/python3.5/site-packages/matplotlib/dates.py", line 145, in <module> <br>
+        from dateutil.rrule import (rrule, MO, TU, WE, TH, FR, SA, SU, YEARLY, <br>
+    File "/home/xiping/.local/lib/python3.5/site-packages/dateutil/rrule.py", line 55 <br>
+        raise ValueError, "Can't create weekday with n == 0" <br>
+    
+3. 
 
