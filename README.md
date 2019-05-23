@@ -11,7 +11,7 @@ This project will introduce how to build caffe:
     $ sudo apt-get install libopenblas-dev
     $ sudo apt-get install python-dev
     $ sudo apt-get install libgflags-dev libgoogle-glog-dev liblmdb-dev
-#### Makefile
+#### Makefile (Makefile.config close OpenCV option), recommend build pycaffe.
 
     $ cd caffe
     $ cp Makefile.config.example Makefile.config
@@ -37,7 +37,7 @@ This project will introduce how to build caffe:
 > LIBRARY_DIRS := $(PYTHON_LIB) /usr/local/lib /usr/lib
 ```
 
-#### CMake
+#### CMake (Makefile.config open OpenCV), recommend build test caffemodel
 
     1. modify CMakeLists as follow.
     +add_definitions(-std=c++11)    // latest version opencv need cpp11 support.
