@@ -39,12 +39,24 @@ This project will introduce how to build caffe:
 
 #### CMake (Makefile.config open OpenCV), recommend build test caffemodel
 
-    1. modify CMakeLists as follow.
-    +add_definitions(-std=c++11)    // latest version opencv need cpp11 support.
+    1. Modify CMakeLists.txt
+    +add_definitions(-std=c++11)
+    2. src/caffe/layers/window_data_layer.cpp
+    -        cv_img = cv::imread(image.first, CV_LOAD_IMAGE_COLOR);
+    +        cv_img = cv::imread(image.first, 1);
+    3. /src/caffe/util/io.cpp
+    -  int cv_read_flag = (is_color ? CV_LOAD_IMAGE_COLOR :
+    -    CV_LOAD_IMAGE_GRAYSCALE);
+    +  int cv_read_flag = (is_color ? 1 : 0 );
+
+    -  int cv_read_flag = (is_color ? CV_LOAD_IMAGE_COLOR :
+    -    CV_LOAD_IMAGE_GRAYSCALE);
+    +  int cv_read_flag = (is_color ? 1 : 0);
     
     $ cd caffe
     $ mkdir build
-    $ make all -j
+    $ make all -j30
+    $ make install     # this step will create install path.
     
     If you like to pycaffe, please build pycaffe again(default python2[need to open support_python_layer=1 in file Makefile.config] had been verifed pass)
     $ make pycaffe
