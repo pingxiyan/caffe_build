@@ -61,6 +61,10 @@ This project will introduce how to build caffe:
     If you like to pycaffe, please build pycaffe again(default python2[need to open support_python_layer=1 in file Makefile.config] had been verifed pass)
     $ make pycaffe
     
+    Attention: I don't why latest official CAFFE, CPU is ok, GPU will core dump, and tip ERRORS 3.  <br>
+    But my old verison caffe is OK(GPU and CPU: http://47.74.231.192/xiping/model_convert/tree/master/caffe)   <br>
+
+    
 #### Test classification
 
     $ cd data/ilsvrc12
