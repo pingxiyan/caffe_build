@@ -63,6 +63,9 @@ This project will introduce how to build caffe:
     
 #### Test classification
 
+    $ cd data/ilsvrc12
+    $ ./get_ilsvrc_aux.sh
+    $ cd -
     $ cd models/bvlc_reference_caffenet
     $ wget http://dl.caffe.berkeleyvision.org/bvlc_reference_caffenet.caffemodel
     $ cp ../../examples/images/cat.jpg ./
@@ -95,5 +98,8 @@ You need to check your cuda path. for example: /usr/local/cuda-9.0  <br>
     File "/home/xiping/.local/lib/python3.5/site-packages/dateutil/rrule.py", line 55 <br>
         raise ValueError, "Can't create weekday with n == 0" <br>
     
-3. 
+3. Call caffe by caffe.cmake, CPU is OK, but GPU tips:
+    F0801 11:11:08.298451 11029 math_functions.cu:79] Check failed: error == cudaSuccess (74 vs. 0)  misaligned address
+    *** Check failure stack trace: ***
+    Aborted (core dumped)
 
